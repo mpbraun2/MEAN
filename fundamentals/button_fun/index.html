@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Button Fun</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <button>Button One!</button>
+    <button>Button Two!</button>
+    <button>Button Three!</button>
+
+    <script type="text/javascript">
+        $(document).on('click', 'button', function () {
+            $(this).toggleClass("red");
+        });
+
+
+        $("button").hover(function () {
+            $(this).addClass("green")
+        }, function () { $(this).removeClass("green") });
+
+    </script>
+</body>
+
+</html>

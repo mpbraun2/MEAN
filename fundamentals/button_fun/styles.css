@@ -1,0 +1,13 @@
+button{
+	background-color: blue;
+	color: white;
+    border-radius: 15px;
+}
+.red{
+	background-color: red;
+    border-radius: 15px;
+}
+.green{
+	background-color: green;
+    border-radius: 15px;
+}
