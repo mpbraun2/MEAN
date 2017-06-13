@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <script src="node_modules/angular/angular.js" charset="utf-8"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <div ng-controller="usersController">
+        <p>With $scope</p>
+        <p>Hello, my name is: {{myName}}</p>
+        <p>My favorite language is: {{myFavoriteLanguage}}</p>
+        <p>My favorite JS framework is: {{myFavoriteJSLibrary}}</p>
+        <p> With Span/ng-bind: </p>
+        <p>Hello, my name is: <span ng-bind="myName"></span></p>
+        <p>My favorite language is: <span ng-bind="myFavoriteLanguage"></span></p>
+        <p>My favorite JS framework is: <span ng-bind="myFavoriteJSLibrary"></span></p>
+    </div>
+</body>
+
+</html>
