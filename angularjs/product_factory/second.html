@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = 'app'>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+    <script src="node_modules/angular/angular.js"></script>
+  <!-- MODULE, FACTORY, CONTROLLER CODE -->
+    <script src="second.js"></script>
+  <!-- MODULE, FACTORY, CONTROLLER CODE in file above -->
+</head>
+<body>
+  <div ng-controller = "productController">
+    <fieldset><legend>Products Controller</legend>
+  <form ng-submit = "create()">
+  <input type="text" ng-model = "product.name">
+  <input type="number" step="0.01" ng-model = "product.price">
+  <input type="submit" value = "Add Product">
+  </form>
+  <table>
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody ng-repeat="product in products | orderBy: 'price' track by $index ">
+        <tr>
+          <td>{{product.name}}</td>
+          <td>{{product.price | currency:"USD $"}}</td>
+          <td><button ng-click = "delete($index)">Delete Product</button></td>
+        </tr>
+      </tbody>
+  </table>
+
+    </fieldset>
+  </div>
+
+</body>
+</html>
