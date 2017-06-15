@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+
+<head>
+    <title></title>
+    <!-- THESE TWO VERSIONS BELOW MUST MATCH -->
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+    <script src='script.js'></script>
+
+</head>
+
+<body>
+    <div ng-app='myApp'>
+        <a href="#!/">Partial 1</a> | <a href="#!/partial2">Partial 2</a>
+        <div ng-view="">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<a href="/#!/repos">Back To Search</a>
+<ul class="list-group">
+  <li ng-repeat="repo in repos" class="list-group-item">
+    <h3 ng-bind="repo.full_name"></h3>
+    <p ng-bind="repo.description"></p>
+  </li>
+</ul>

@@ -1,0 +1,16 @@
+{
+  "name": "github-searcher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "David Wolgemuth <davidjwolgemuth@gmail.com> (https://github.com/david-wolgemuth)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}

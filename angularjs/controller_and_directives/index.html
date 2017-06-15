@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="script.js"></script>
+    <title>Products</title>
+</head>
+
+<body>
+    <div ng-controller='foodsController'> <!--Ensure that the form is within the Controller Div-->
+        <form ng-submit='addFood()'>Favorite Food <input type="text" ng-model="newFood.name"><input type="submit" value="Add Food">
+        </form>
+        <ul>
+            <li ng-repeat='food in foods'> {{ food.name }}</li>
+        </ul>
+        <p ng-if="newFood.name">
+                You are currently typing: {{ newFood.name }}
+        </p>
+    </div>
+</body>
+
+</html>
