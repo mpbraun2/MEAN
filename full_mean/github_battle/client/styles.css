@@ -1,0 +1,34 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+div.scroll{
+    height: 350px;
+    width: 300px;
+    overflow: auto;
+    overflow-x: hidden;
+    border: 1px solid black;
+    background-color: #eee;
+    padding: 5px;
+}
+.box {
+    border: 1px solid black;
+    background-color: white;
+    width: 275px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.noted {
+    font-size: 0.75em;
+}
+.notetext {
+    font-size: 2.0em;
+}
+img{
+    height: 50px;
+    width: 50px;
+}
+.button{
+    width: 75px;
+}

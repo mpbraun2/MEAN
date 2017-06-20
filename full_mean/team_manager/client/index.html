@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Team Management </title>
+    <script src="angular/angular.js"> </script>
+    <script src="angular-route/angular-route.js"> </script>
+    <script src="app.js"> </script>
+    <script src="angular-messages/angular-messages.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>$('button').on("click",function(){  
+  $(this).toggleClass('active');
+  });</script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <a class="tag" href="#!/list"><h2>Manage Players</h2></a> <h2>|</h2> <a class="tag" href="#!/status/game/1"><h2>Manage Player Status</h2></a>
+    <div ng-view="">
+        <!-- partials will load here -->
+    </div>
+</body>
+</html>

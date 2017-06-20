@@ -1,0 +1,16 @@
+<a class="tag" href="#!/list"><h3>List</h3></a> | <a class="tag" href="#!/addplayer"><h3>Add Player</h3></a>
+
+<div class="addplayer">
+<h1> Add Player </h1>
+    <form ng-submit="addPlayer()" action="/list" method="post">
+        Player Name: <input type="text" ng-model="player.name" minlength="2">
+        <br>
+        <div class="messages" ng-messages="form.player.$error">
+            <p ng-message="minlength"> *The player name can not be less than two characters. </p> 
+            <p ng-message="required"> *A player name is absolutely required. </p>
+        </div>
+        <br>
+        Preferred Position: <input type="text" ng-model="player.position">
+        <input type="submit" value="ADD">
+    </form>
+</div>

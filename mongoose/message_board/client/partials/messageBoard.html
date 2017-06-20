@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+
+<head>
+    <title>Partiaaaaals</title>
+</head>
+
+<body>
+    <form ng-submit="createMessage()" method="post" >
+        <p>Name: <input type="text" ng-model="message.name">
+            <p>Message: <textarea ng-model='message.message'></textarea>
+                <input id="post" type="submit" value="Post message">
+    </form>
+    
+    <div ng-repeat='message in messages'>
+        <h3>Name: {{ message.name }}</h3>
+        <h3>Message: {{ message.message }}</h3>
+        <h6>Name: {{ comment.name }}</h6>
+        <h6>Comments: {{ comment.comment }}</h6>
+        <form ng-submit="createComment()" method="post">
+            <p class="margin">Name: </p><input class="comment_input" type="text" ng-model="comment.name">
+            <p class="margin">Comment: </p><textarea class="comment_text" ng-model="comment.comment"></textarea>
+            <input class="post2" type="submit" value="Post comment">
+        </form>
+    </div>
+    
+</body>
+
+</html>

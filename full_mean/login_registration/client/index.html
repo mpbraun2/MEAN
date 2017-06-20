@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login and Registration</title>
+    <link rel="stylesheet" href="assets/main.css"> <!--will navigate to file-->
+    <script src='angular/angular.js'></script>
+    <script src='angular-route/angular-route.js'></script>
+    <script src='angular-cookies/angular-cookies.js'></script>
+    <script src='angular-messages/angular-messages.js'></script>
+    <script src="assets/app.js" charset="utf-8"></script> <!--will navigate to file-->
+</head>
+
+<body ng-controller='loginController'> <!--specifies which controller to use for this body-->    
+    <form ng-model="registration" ng-submit="register()"> <!--specifies which method to use for this form-->
+        {{errors.first_name.message}}
+        <input type="text" ng-model="registration.first_name" placeholder="first name please!"> <!--ng-model must be set whatever the form ng model is set to-->
+        {{errors.last_name.message}}
+        <input type="text" ng-model="registration.last_name" placeholder="last name please!"> 
+        {{errors.email.message}}
+        <input type="email" ng-model="registration.email" placeholder="email please!"> 
+        {{errors.password.message}}
+        <input type="password" ng-model="registration.password" placeholder="password please!">
+        {{errors.password.message}}
+        <input type="password" ng-model="registration.confirm_password" placeholder="type that password one more time!"> 
+        {{errors.birthday.message}}
+        <input type="date" ng-model="registration.birthday">
+        <input type="submit" value="register">
+    </form>
+    <!--</div>-->
+    </br>
+    <form ng-model="userLogin" ng-submit="login()">
+        {{errors.login_reg.message}}
+        <input type="email" ng-model="userLogin.email" placeholder="email"><br>
+        <input type="password" ng-model="userLogin.password" placeholder="password">
+
+        <input type="submit" value="login">
+    </form>
+</body>
+
+</html>

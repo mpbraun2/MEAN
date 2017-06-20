@@ -1,0 +1,14 @@
+<form ng-submit="createNote()">
+    <label for="">Note:</label>
+    <textarea rows="1" cols="70" ng-model="note.text"></textarea>
+    <input class="button" type="submit" value="Add Note">
+</form>
+
+<div class="scroll">
+    <div ng-repeat="note in notes">
+        <div class="box">
+            <p class="timestamp">Noted on: {{ note.createdAt |  date:'MMM dd, yyyy h:mm:ss a' }}</p>
+            <p>{{ note.text }}</p>
+        </div>
+    </div>
+</div>

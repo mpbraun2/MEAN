@@ -1,0 +1,27 @@
+Manage Players:
+    ☐ localhost/players
+    Player List:
+        ☐ table ng-repeat all players with player name, preferred position and delete option
+        ☐ delete should have a pop up confirmation
+        ☐ players list should be landing page
+
+    Add Player:
+        ☐ form with 2 inputs. Player name and preferred position
+        ☐ validations: name min 2 letters position optional
+        ☐ add button should be disabled until validations pass
+        ☐ adding a player should redirect to players/list
+
+
+Manage Player Status:
+    ☐ localhost/status
+    Players Status:
+        ☐ game one should be default
+        ☐ table ng-repeat all players with player name, and current satus lit 
+        ☐ default status should be undecided as yellow
+        ☐ clicking playing should make it green
+        ☐ clicking not playing should make it red
+        ☐ clicking undecided should make it yellow
+Models:
+    Player:
+        ☐ make model with name, position, status set to undecided
+        
