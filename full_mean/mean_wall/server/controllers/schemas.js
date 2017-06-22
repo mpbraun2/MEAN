@@ -6,13 +6,13 @@ var Post = mongoose.model("Post");
 var Comment = mongoose.model("Comment")
 
 
-module.exports.home = function (request, response) {
+module.exports.home = function (request, response) { //Make this more efficient, link the posts and comments! DRY!
   Post.find({}).populate("_author").then(function (posts) { //finds all the posts by a specific author
     Comment.find({}).populate("_author _post").then(function (comments) {
       response.json({ posts: posts, comments: comments });//provides two sets of objects as posts and comments associated with that post
     }).catch(function (err) {
-      console.log(err)
-    })
+      console.log(err) // confirm that these errors are being sent and messaged correctly so that they can be acted upon.
+    }) // make sure to define the errors in a messages.
   }).catch(function (err) {
     console.log(err)
   })
@@ -54,7 +54,7 @@ module.exports.login = function (request, response) {
 }
 
 module.exports.register = function (request, response) {//register controller
-  var user = new User(request.body); //stages the user
+  var user = new User(request.body); //stages the user !! SHOULD BE MORE PRECISE, SECURITY ISSUE
   user.save(function (err) { //creates the user if no errors
     if (err) {
       response.json({ errors: err })

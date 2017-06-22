@@ -23,7 +23,7 @@ app.factory("userFactory", function ($http) {
   factory.register = function (user, finishedAddingUser) {
     $http.post('/api/users', user).then(function (response) {
       if (response.data.errors) {
-
+        //errors will collect and display all instead of ACTIVE ERRORS
         factory.errors.push(response.data.errors)
       }
       else {
@@ -61,7 +61,7 @@ app.factory("userFactory", function ($http) {
 app.factory("postFactory", function ($http) {
   var factory = {};
   var posts = [];
-
+//
   factory.getPosts = function (receivedPosts) {
     $http.get("/api/posts").then(function (response) {
       posts = response.data.posts;
@@ -71,6 +71,7 @@ app.factory("postFactory", function ($http) {
   }
   factory.addNewPost = function (postdata, finishedAddingPost) {
     $http.post('/api/posts', postdata).then(function (response) {
+      //this should only occur if there are no errors If ERRORS NO, ELSE finishedAddingPost();
       finishedAddingPost();
     }
     )
@@ -104,6 +105,7 @@ app.controller("loginController", function ($scope, $location, userFactory, $coo
   $scope.register = function () {
     if ($scope.registerUser.password == $scope.registerUser.confirm) {
       userFactory.register($scope.registerUser, function () {
+        //make sure that confirm password is not passed back into db
         if (userFactory.user) {
           $cookies.put('loggeduserid', userFactory.user.id);
           $cookies.put('loggedusername', userFactory.user.username);
@@ -115,6 +117,7 @@ app.controller("loginController", function ($scope, $location, userFactory, $coo
 
         }
         else {
+          //error presentation should be more like this, reset after each error set.
           $scope.errors = userFactory.errors;
         }
       })
@@ -168,6 +171,7 @@ app.controller("homeController", function ($scope, $location, userFactory, postF
       postFactory.addNewPost(newpostdata, function () {
         $scope.newpost = {};
       })
+      //reload will "refresh the page" and add the new post
       $route.reload();
     }
 
@@ -182,6 +186,7 @@ app.controller("homeController", function ($scope, $location, userFactory, postF
       commentFactory.addNewComment(newcommentdata, function () {
         $scope.newcomment = {};
       })
+      //reload will "refresh the page" and add the new post
       $route.reload();
     }
   } else {

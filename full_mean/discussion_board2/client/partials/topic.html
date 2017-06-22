@@ -12,11 +12,11 @@
 
 <div ng-repeat="post in topic.posts">
     <p><a href="/#!/profile/{{post.user_id}}">{{post.user}}</a> {{post.content}}</p>
-    <button ng-click="like(post._id)">Like {{post.like.length}}</button>
+    <button ng-click="like(post._id)">Like {{post.like.length}}</button><!--calculates number of likes-->
     <button ng-click="dislike(post._id)">Dislike {{post.dislike.length}}</button>
     <div ng-repeat="comment in post.comments">
         <p><a href="/#!/profile/{{comment.user_id}}">{{comment.user}}</a> {{comment.content}}</p>
     </div>
     <textarea ng-model="content"></textarea>
-    <input type='submit' ng-click="addComment(post._id, content)" value='Comment'>
+    <input type='submit' ng-click="addComment(post._id, content)" value='Comment'><!--Adds comment with addComment()-->
 </div>
