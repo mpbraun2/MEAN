@@ -1,0 +1,47 @@
+<div>
+    <span>Welcome <span ng-bind="user.username"></span> <a href="/#!">Dashboard</a>  <input class="" type="button" value="Sign Out" ng-click="logout()"> 
+</div>
+<div>
+    <table class="topic_table">
+        <thead>
+            <tr>
+                <th> Category </th>
+                <th> Topic </th>
+                <th> User Name </th>
+                <th> Posts </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="topic in topics">
+                <td> {{ topic.topic.topicCategory }} </td>
+                <td> {{ topic.topic.topicName }} </td>
+                <td> {{ topic._user.username }}</td>
+                <td> {{ topic.topic.topicpost }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="scroll">
+    <div class="box">
+        <h3>Add a new Topic</h3>
+        <form ng-submit="addNewTopic()">
+            <label>Topic:</label>
+            <textarea rows="1" cols="30" ng-model="topic.topicName"></textarea>
+            <br>
+            <label>Description:</label>
+            <textarea rows="3" cols="30" ng-model="topic.topicDescription"></textarea>
+            <br>
+            <label>Category:</label>
+            <select ng-model="topic.topicCategory">
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JAVASCRIPT">JAVASCRIPT</option>
+                <option value="RUBY">RUBY</option>
+                <option value="PYTHON">PYTHON</option>
+            </select>
+            <br>
+            <input class="button" type="submit" value="Submit">
+        </form>
+    </div>
+</div>

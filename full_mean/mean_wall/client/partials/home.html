@@ -1,0 +1,33 @@
+<div class='signout'>
+  <a href="/#!/" ng-click="signout()"><b>Signout</b></a>
+</div>
+<br>
+<form ng-submit="addPost()">
+  <label><h4><em>Add Post:</em></h4></label>
+  <textarea rows="10" cols="30" placeholder="Add your post" ng-model="newpost.posttext"></textarea>
+  <br>
+  <input type="submit" value="Add a post">
+</form>
+
+
+
+You are currently logged in as: {{user.username}} | and your unique id is {{user.id}}!
+<hr>
+
+<div ng-repeat="post in posts">
+  {{post.postText}} <b>Post made possible by: {{post._author.username}} on {{post.createdAt|date:'medium'}}</b>
+  <em><h4>Add Comments:</h4></em>
+  <div ng-repeat="comment in comments">
+
+    <div ng-if="comment._post._id === post._id">
+
+      <span class='newcomments'>{{comment.commentText}} <span><b>Comment made possible by: {{comment._author.username}} on {{comment.createdAt|date:'medium'}}</b>
+    </div>
+  </div>
+  <form ng-submit="addComment(post._id, newcomment)">
+    <textarea rows="10" cols="30" ng-model="newcomment.commenttext"></textarea>
+    <br>
+    <input type="submit" value="Add Comment to Post">
+  </form>
+  <hr>
+</div>

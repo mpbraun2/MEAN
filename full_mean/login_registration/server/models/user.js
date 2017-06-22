@@ -41,6 +41,16 @@ var usersSchema = new mongoose.Schema({
             message: "Password failed validation, you must have at least 1 number, uppercase and special character"
         }
     },
+    confirm_password: {
+        type: String,
+        required:true,
+        validate: {
+            validator: function ( value ) {
+                if (password != confirm_password);
+            },
+                message: "Passwords do not match!"
+            }
+        },
     birthday: {
         type: Date,
         required: true,
