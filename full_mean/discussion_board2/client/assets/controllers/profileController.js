@@ -1,5 +1,6 @@
 app.controller('profileController', function ($scope, dashboardFactory, $location, $cookies, $routeParams) {
-  $scope.logout = function () { //logout functionality
+  $scope.logout = function () { 
+    //logout functionality
     $cookies.remove('username')
     $cookies.remove('id')
     $location.url('/')
@@ -8,10 +9,12 @@ app.controller('profileController', function ($scope, dashboardFactory, $locatio
   $scope.showUser = function () {
     dashboardFactory.showUser($scope.profile_id, function (data) {
       if (data.err) {
-        consolelog(data.err) //provides errors if any exist.
+        consolelog(data.err) 
+        //provides errors if any exist.
       }
       else {
-        console.log(data.user) //otherwise creates the user.
+        console.log(data.user) 
+        //otherwise creates the user.
         $scope.user = data.user;
       }
     })
